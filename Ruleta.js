@@ -268,11 +268,11 @@ class Ruleta extends Juegos_1.Juego {
         //----------------------------------------------------------------------------------------------------
         //PRESENTACION DE LA RULETA
         this.funcionRuletaCompleta = () => {
-            return console.log(`-------RULETA DE LA SUERTE------- \n
-Número ${this.funcionNumeroRuleta()[0]}||${this.funcionColorRuleta()[0]}||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[0])}     ******     Número ${this.funcionNumeroRuleta()[1]}||${this.funcionColorRuleta()[1]}||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[1])}     ******     Número ${this.funcionNumeroRuleta()[2]}||${this.funcionColorRuleta()[2]}||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[2])}\n
-Número ${this.funcionNumeroRuleta()[3]}||${this.funcionColorRuleta()[3]}||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[3])}     ******     Número ${this.funcionNumeroRuleta()[4]}||${this.funcionColorRuleta()[4]}||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[4])}     ******     Número ${this.funcionNumeroRuleta()[5]}||${this.funcionColorRuleta()[5]}||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[5])}\n
-Número ${this.funcionNumeroRuleta()[6]}||${this.funcionColorRuleta()[6]}||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[6])}     ******     Número ${this.funcionNumeroRuleta()[7]}||${this.funcionColorRuleta()[7]}||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[7])}     ******     Número ${this.funcionNumeroRuleta()[8]}||${this.funcionColorRuleta()[8]}||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[8])}\n
-Número ${this.funcionNumeroRuleta()[9]}||${this.funcionColorRuleta()[9]}||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[9])}     ******     Número ${this.funcionNumeroRuleta()[10]}||${this.funcionColorRuleta()[10]}||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[10])}     ******     Número ${this.funcionNumeroRuleta()[11]}||${this.funcionColorRuleta()[11]}||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[11])}\n`);
+            return console.log(`================================\n------RULETA DE LA SUERTE------ \n================================\n
+Número \x1b[1;33m${this.funcionNumeroRuleta()[0]}\x1b[0m||\x1b[1;36m${this.funcionColorRuleta()[0]}\x1b[0m||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[0])}     ******     Número \x1b[1;33m${this.funcionNumeroRuleta()[1]} \x1b[0m||${this.funcionColorRuleta()[1]}||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[1])}   ******     Número \x1b[1;33m${this.funcionNumeroRuleta()[2]}\x1b[0m||\x1b[1;31m${this.funcionColorRuleta()[2]}\x1b[0m||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[2])}\n
+Número \x1b[1;33m${this.funcionNumeroRuleta()[3]}\x1b[0m||\x1b[1;36m${this.funcionColorRuleta()[3]}\x1b[0m||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[3])}   ******     Número \x1b[1;33m${this.funcionNumeroRuleta()[4]} \x1b[0m||${this.funcionColorRuleta()[4]}||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[4])}     ******     Número \x1b[1;33m${this.funcionNumeroRuleta()[5]}\x1b[0m||\x1b[1;31m${this.funcionColorRuleta()[5]}\x1b[0m||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[5])}\n
+Número \x1b[1;33m${this.funcionNumeroRuleta()[6]}\x1b[0m||\x1b[1;36m${this.funcionColorRuleta()[6]}\x1b[0m||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[6])}     ******     Número \x1b[1;33m${this.funcionNumeroRuleta()[7]} \x1b[0m||${this.funcionColorRuleta()[7]}||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[7])}   ******     Número \x1b[1;33m${this.funcionNumeroRuleta()[8]}\x1b[0m||\x1b[1;31m${this.funcionColorRuleta()[8]}\x1b[0m||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[8])}\n
+Número \x1b[1;33m${this.funcionNumeroRuleta()[9]}\x1b[0m||\x1b[1;36m${this.funcionColorRuleta()[9]}\x1b[0m||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[9])}   ******     Número \x1b[1;33m${this.funcionNumeroRuleta()[10]}\x1b[0m||${this.funcionColorRuleta()[10]}||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[10])}     ******    Número \x1b[1;33m${this.funcionNumeroRuleta()[11]}\x1b[0m||\x1b[1;31m${this.funcionColorRuleta()[11]}\x1b[0m||${this.funcionRuletaParoImpar(this.funcionNumeroRuleta()[11])}\n`);
         };
         //----------------------------------------------------------------------------------------------------
         //METODO PRINCIPAL DE JUEGO
@@ -298,14 +298,14 @@ Número ${this.funcionNumeroRuleta()[9]}||${this.funcionColorRuleta()[9]}||${thi
             console.log(`\x1b[34m 3) Podrá elegir por último la Paridad:\x1b[0m *(par)* | *(impar)* \x1b[34m - ¡¡¡Pudiendo sacar **1** vez más de lo que aposto!!!\x1b[0m`);
             console.log("================================");
             console.log(`\n\n\x1b[33m ****Mucha Suerte****\x1b[0m\n\n`);
-            console.log("================================");
+            console.log("\x1b[35m================================");
             //ponemos en 0 todas las apuestas
             this.setApuestaNumero(0);
             this.setApuestaColor(0);
             this.setApuestaEsPar(0);
             //-----------------------------------------------------------------------------------------------
             console.log(`Comencemos...en primer lugar...`);
-            console.log("================================");
+            console.log("================================\x1b[0m");
             this.funcionRuletaCompleta();
             this.funcionElegirNumero();
             if (this.getCreditoActual() >= 1000) {

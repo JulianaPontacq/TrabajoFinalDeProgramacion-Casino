@@ -1,5 +1,5 @@
 export class Juego {
-    private nombreDeJuego: string;
+    protected nombreDeJuego: string;
     private creditoActual: number;
 
     public constructor(nombre: string, creditoActual: number) {
@@ -23,6 +23,8 @@ export class Juego {
         this.creditoActual += ganancia;
     }
 
+
     public jugar (apuesta: number): void { 
+     
     }
 }

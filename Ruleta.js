@@ -142,49 +142,49 @@ class Ruleta extends Juegos_1.Juego {
         //FUNCION ELEGIR NUMERO
         this.funcionElegirNumero = () => {
             //INGRESA LA OPCION DEL NUMERO QUE DESEA APOSTAR POR QUESTION.INT
-            this.setNumeroElegido(rls.questionInt(`Por favor ingrese el numero al que quiere jugar su apuesta\n ${this.getNumeros().join(", ")}\n`));
+            this.setNumeroElegido(rls.questionInt(`\x1b[35m================================\x1b[0m\nPor favor ingrese el numero al que quiere jugar su apuesta\n\x1b[35m================================\x1b[0m\n *\x1b[1;33m${this.getNumeros().join("\x1b[0m* || *\x1b[1;33m")}\x1b[0m*\n`));
             //HACEMOS UN BUCLE QUE SI EL NUMERO INGRESADO, NO CUMPLE CON LA CONDICION, TE LO VUELVE A PEDIR HASTA QUE SE CUMPLA
             //EL NUMERO DEBE ESTAR DENTRO DEL ARRAY DE NUMEROS, DEBE SER MAYOR/IGUAL A 0 Y MENOS/IGUAL A 11
             while (!(this.getNumeros()[this.getNumeroElegido()] >= 0 && this.getNumeros()[this.getNumeroElegido()] <= 11)) {
                 console.log(`\nNo es posible\n`);
-                this.setNumeroElegido(rls.questionInt(`****Por favor ingrese el numero al que quiere jugar su apuesta\n\n------------------------------------- ${this.getNumeros().join(", ")}\n\n\n-------------------------------------\n`));
+                this.setNumeroElegido(rls.questionInt(`\x1b[35m================================\x1b[0m\nPor favor ingrese el numero al que quiere jugar su apuesta\n\x1b[35m================================\x1b[0m\n *\x1b[1;33m${this.getNumeros().join("\x1b[0m* || *\x1b[1;33m")}\x1b[0m*\n`));
             }
             //RETORNA EL VALOR APOSTADO DE TIPO NUMBER
-            console.log(`A elegido el numero ${this.getNumeros()[this.getNumeroElegido()]} para jugar`);
+            console.log(`\n\x1b[38;5;208m================================\x1b[0m\nA elegido el numero *\x1b[38;5;208m${this.getNumeros()[this.getNumeroElegido()]}\x1b[0m* para jugar\n\x1b[38;5;208m================================\x1b[0m`);
             return this.getNumeros()[this.getNumeroElegido()];
         };
         //----------------------------------------------------------------------------------------------------
         //FUNCION ELEGIR COLOR
         this.funcionElegirColor = () => {
             //INGRESA LA OPCION DEL COLOR QUE DESEA APOSTAR POR QUESTION.INT
-            this.setColorElegido(rls.questionInt(`-------------------------------------\nPor favor ingrese el Color al que quiere jugar su apuesta\n-------------------------------------\n\n1 para elegir el color ${this.getColor()[0]}\n---------------\n2 para elegir el color ${this.getColor()[1]}\n---------------\n3 para elegir el color ${this.getColor()[2]} \n---------------\n`) - 1);
+            this.setColorElegido(rls.questionInt(`\x1b[35m================================\x1b[0m\nPor favor ingrese el Color al que quiere jugar su apuesta\n\x1b[35m================================\x1b[0m\n\x1b[34m1\x1b[0m Color \x1b[38;5;117m${this.getColor()[0]}\x1b[0m\n\x1b[33m===============\x1b[0m\n\x1b[34m2\x1b[0m Color ${this.getColor()[1]}\n\x1b[33m===============\x1b[0m\n\x1b[34m3\x1b[0m Color \x1b[31m${this.getColor()[2]}\x1b[0m \n\x1b[33m===============\x1b[0m\n`) - 1);
             //HACEMOS UN BUCLE QUE SI EL NUMERO INGRESADO, NO CUMPLE CON LA CONDICION, TE LO VUELVE A PEDIR HASTA QUE SE CUMPLA
             //EL NUMERO DEBE ESTAR DENTRO DEL ARRAY DE NUMEROS, DEBE SER MAYOR/IGUAL A 0 Y MENOS/IGUAL A 11
             while (!(this.getColorElegido() >= 0) ||
                 !(this.getColorElegido() <= 2)) {
                 console.log(`\nNo es posible\n`);
-                this.setColorElegido(rls.questionInt(`-------------------------------------\nPor favor ingrese el Color al que quiere jugar su apuesta\n-------------------------------------\n1 ${this.getColor()[0]}\n---------------\n2 ${this.getColor()[1]},\n---------------\n3 ${this.getColor()[2]} ---------------\n\n`) - 1);
+                this.setColorElegido(rls.questionInt(`\x1b[35m================================\x1b[0m\nPor favor ingrese el Color al que quiere jugar su apuesta\n\x1b[35m================================\x1b[0m\n\x1b[34m1\x1b[0m Color \x1b[38;5;117m${this.getColor()[0]}\x1b[0m\n\x1b[33m===============\x1b[0m\n\x1b[34m2\x1b[0m Color ${this.getColor()[1]}\n\x1b[33m===============\x1b[0m\n\x1b[34m3\x1b[0m Color \x1b[31m${this.getColor()[2]}\x1b[0m \n\x1b[33m===============\x1b[0m\n`) - 1);
             }
             //RETORNA EL VALOR APOSTADO DE TIPO STRING
-            console.log(`A elegido el color ${this.getColor()[this.getColorElegido()]} para jugar`);
+            console.log(`\x1b[35m================================\x1b[0m\nEligio el color \x1b[33m${this.getColor()[this.getColorElegido()]}\x1b[0m para jugar\n\x1b[35m================================\x1b[0m\n`);
             return this.getColor()[this.getColorElegido()];
         };
         //----------------------------------------------------------------------------------------------------
         //FUNCION ELEGIR ES PAR
         this.funcionElegirEsPar = () => {
             //INGRESA LA OPCION DE PAR O IMPAR SEGUN QUIERA APOSTAR POR QUESTION.INT
-            this.setElegirEsPar(rls.questionInt(`-------------------------------------\nPor favor elige si desea apostar a par o impar\n---------------\n1 para elegir Par \n---------------\n2 para elegir Impar\n---------------\n`) - 1);
+            this.setElegirEsPar(rls.questionInt(`\x1b[35m================================\x1b[0m\nPor favor elige la paridad a la que desea apostar\n\x1b[35m================================\x1b[0m\n\x1b[34m1\x1b[0m Elegir Par \n\x1b[33m============\x1b[0m\n\x1b[34m2\x1b[0m Elegir Impar\n\x1b[33m============\x1b[0m\n`) - 1);
             //INICIAMOS UN BUCLE, SINO ES OPCION 1 O 2, NO DEJARA AVANZAR
             while ((this.getElegirEsPar()) < 0 || (this.getElegirEsPar()) >= 2) {
-                this.setElegirEsPar(rls.questionInt(`-------------------------------------\nPor favor elige si desea apostar a par o impar\n---------------\n1 para elegir Par\n---------------\n2 para elegir Impar\n---------------\n`) - 1);
+                this.setElegirEsPar(rls.questionInt(`\x1b[35m================================\x1b[0m\nPor favor elige la paridad a la que desea apostar\n\x1b[35m================================\x1b[0m\n\x1b[34m1\x1b[0m Elegir Par \n\x1b[33m============\x1b[0m\n\x1b[34m2\x1b[0m Elegir Impar\n\x1b[33m============\x1b[0m\n`) - 1);
             }
             //COMPROBAMOS NUMERO LA ELECCION Y DEVUELVE TRUE O FALSE SEGUN CORRESPONDA
             if ((this.getElegirEsPar() == 0)) {
-                console.log(`---------------\nA elegido jugar a Par\n---------------\n`);
+                console.log(`\x1b[35m================================\x1b[0m\nA elegido jugar a Par\n\x1b[35m================================\x1b[0m\n`);
                 return true;
             }
             else {
-                console.log(`---------------\nA elegido jugar a Impar\n---------------\n`);
+                console.log(`\x1b[35m================================\x1b[0m\nA elegido jugar a Impar\n\x1b[35m================================\x1b[0m\n`);
                 return false;
             }
         };
@@ -192,16 +192,16 @@ class Ruleta extends Juegos_1.Juego {
         //FUNCION APOSTAR
         this.funcionApostar = () => {
             //INGRESA LA OPCION QUE DESEA APOSTAR POR QUESTION.INT
-            this.setApuesta(rls.questionInt(`ingrese la cantidad que desea apostar \n1 para apostar ${this.getArrayDeApuestas()[0]}\n2 para apostar ${this.getArrayDeApuestas()[1]}\n3 para apostar ${this.getArrayDeApuestas()[2]}\n4 para apostar ${this.getArrayDeApuestas()[3]}\n5 para apostar ${this.getArrayDeApuestas()[4]}\n6 para apostar ${this.getArrayDeApuestas()[5]}\n`) - 1);
+            this.setApuesta(rls.questionInt(`\n-\x1b[34mIngrese una opcion\x1b[0m\n\x1b[38;5;117m1\x1b[0m Apostar ${this.getArrayDeApuestas()[0]}\n\x1b[38;5;117m2\x1b[0m Apostar ${this.getArrayDeApuestas()[1]}\n\x1b[38;5;117m3\x1b[0m Apostar ${this.getArrayDeApuestas()[2]}\n\x1b[38;5;117m4\x1b[0m Apostar ${this.getArrayDeApuestas()[3]}\n\x1b[38;5;117m5\x1b[0m Apostar ${this.getArrayDeApuestas()[4]}\n\x1b[38;5;117m6\x1b[0m \x1b[33mALL-IN\x1b[0m ${this.getArrayDeApuestas()[5]}\n`) - 1);
             //HACEMOS UN BUCLE QUE SI EL NUMERO INGRESADO, NO CUMPLE CON LA CONDICION, TE LO VUELVE A PEDIR HASTA QUE SE CUMPLA
             //SI ES MENOR QUE 0, O MAYOR QUE 5 O LA OPCION INGRESADA ES MENOR AL CREIDTO DISPONIBLE
             while ((this.getApuesta()) < 0
                 || (this.getApuesta()) > 5
                 || (this.getArrayDeApuestas()[this.getApuesta()]) > this.getCreditoActual()) {
-                this.setApuesta(rls.questionInt(`ingrese la cantidad que desea apostar \n1 para apostar ${this.getArrayDeApuestas()[0]}\n2 para apostar ${this.getArrayDeApuestas()[1]}\n3 para apostar ${this.getArrayDeApuestas()[2]}\n4 para apostar ${this.getArrayDeApuestas()[3]}\n5 para apostar ${this.getArrayDeApuestas()[4]}\n6 para apostar ${this.getArrayDeApuestas()[5]}\n`) - 1);
+                this.setApuesta(rls.questionInt(`\n-\x1b[34mIngrese una opcion\x1b[0m\n\x1b[38;5;117m1\x1b[0m Apostar ${this.getArrayDeApuestas()[0]}\n\x1b[38;5;117m2\x1b[0m Apostar ${this.getArrayDeApuestas()[1]}\n\x1b[38;5;117m3\x1b[0m Apostar ${this.getArrayDeApuestas()[2]}\n\x1b[38;5;117m4\x1b[0m Apostar ${this.getArrayDeApuestas()[3]}\n\x1b[38;5;117m5\x1b[0m Apostar ${this.getArrayDeApuestas()[4]}\n\x1b[38;5;117m6\x1b[0m \x1b[33mALL-IN\x1b[0m ${this.getArrayDeApuestas()[5]}\n`) - 1);
             }
             //INFORMA QUE LA APUESTA ES CORRECTA
-            console.log(`su apuesta de ${this.getArrayDeApuestas()[this.getApuesta()]} se registro correctamente, mucha suerte`);
+            console.log(`\x1b[35m================================\x1b[0m\nSu apuesta de \x1b[33m${this.getArrayDeApuestas()[this.getApuesta()]}\x1b[0m se registro correctamente, \x1b[33m¡¡Mucha suerte!!\x1b[0m\n\x1b[35m================================\x1b[0m\n`);
             //RETORNA EL VALOR APOSTADO DE TIPO NUMBER, DESDE EL ARRAY DE APUESTA
             return this.getArrayDeApuestas()[this.getApuesta()];
         };
@@ -210,19 +210,19 @@ class Ruleta extends Juegos_1.Juego {
         this.calcularGananciaNumero = (apuesta) => {
             this.setApuestaNumero(apuesta); //(this.getArrayDeApuestas()[this.getApuesta()]));
             this.setCreditoActual((this.getCreditoActual()) - (this.getApuestaNumero()));
-            console.log(`el saldo es ${this.getCreditoActual()} `);
+            console.log(`\x1b[32m==================\x1b[0m\nSu saldo es \x1b[33m${this.getCreditoActual()}\x1b[0m\n\x1b[32m==================\x1b[0m `);
         };
         //CALCULAR RESULTADO COLOR
         this.calcularGananciaColor = (apuesta) => {
             this.setApuestaColor(apuesta);
             this.setCreditoActual((this.getCreditoActual()) - (this.getApuestaColor()));
-            console.log(`el saldo es ${this.getCreditoActual()} `);
+            console.log(`\x1b[32m==================\x1b[0m\nSu saldo es \x1b[33m${this.getCreditoActual()}\x1b[0m\n\x1b[32m==================\x1b[0m `);
         };
         //CALCULAR RESULTADO PARIDAD
         this.calcularGananciaEsPar = (apuesta) => {
             this.setApuestaEsPar(apuesta);
             this.setCreditoActual((this.getCreditoActual()) - (this.getApuestaEsPar()));
-            console.log(`el saldo es ${this.getCreditoActual()} `);
+            console.log(`\x1b[32m==================\x1b[0m\nSu saldo es \x1b[33m${this.getCreditoActual()}\x1b[0m\n\x1b[32m==================\x1b[0m `);
         };
         //----------------------------------------------------------------------------------------------------
         //FUNCION CALCULAR GANANCIA
@@ -231,33 +231,33 @@ class Ruleta extends Juegos_1.Juego {
                 //comprobamos si saca el numero, la apuesta se multiplica * 8 y se suma al credito
                 if ((this.getNumeroElegido()) === (this.getNumeroGanador())) {
                     this.setCreditoActual(this.getApuestaNumero() * 9 + this.getCreditoActual());
-                    console.log(`ah ganado 8 veces mas de su apuesta de ${this.getApuestaNumero()} por sacar pleno en ${this.getNumeroGanador()}, ahora su saldo es de ${this.getCreditoActual()}`);
+                    console.log(`\n\x1b[32m================================\x1b[0m\nHa ganado *\x1b[33m8\x1b[0m*  veces mas de su apuesta de \x1b[33m${this.getApuestaNumero()}\x1b[0m por sacar pleno en \x1b[33m${this.getNumeroGanador()}\x1b[0m, ahora su saldo es de \x1b[33m${this.getCreditoActual()}\x1b[0m\n\x1b[32m================================\x1b[0m\n`);
                 }
                 //Sino restamos la apuesta al credito
                 else {
-                    console.log(`ah perdido su apuesta de ${this.getApuestaNumero()} al numero ${this.getNumeroElegido()}, su saldo esta en ${this.getCreditoActual()}`);
+                    console.log(`\n\x1b[31m================================\x1b[0m\nHa perdido su apuesta de \x1b[33m${this.getApuestaNumero()}\x1b[0m al numero \x1b[33m${this.getNumeroElegido()}\x1b[0m, su saldo esta en \x1b[33m${this.getCreditoActual()}\x1b[0m\n\x1b[31m================================\x1b[0m\n`);
                 }
             }
             //color
             if (!(this.getApuestaColor() === 0)) {
                 if ((this.getColor()[this.getColorElegido()]) === (this.getColorGanador())) {
                     this.setCreditoActual(((this.getApuestaColor()) * 3) + this.getCreditoActual());
-                    console.log(`ah ganado 2 veces mas de su apuesta de ${this.getApuestaColor()} por pegar en ${this.getColorGanador()}, ahora su saldo es de ${this.getCreditoActual()}`);
+                    console.log(`\n\x1b[32m================================\x1b[0m\nHa ganado *\x1b[33m2\x1b[0m* veces mas de su apuesta de \x1b[33m${this.getApuestaColor()}\x1b[0m por pegar en \x1b[33m${this.getColorGanador()}\x1b[0m, ahora su saldo es de \x1b[33m${this.getCreditoActual()}\x1b[0m\n\x1b[32m================================\x1b[0m\n`);
                 }
                 //Sino restamos la apuesta al credito
                 else {
-                    console.log(`ah perdido su apuesta de ${this.getApuestaColor()} al Color ${this.getColor()[this.getColorElegido()]}, su saldo esta en ${this.getCreditoActual()}`);
+                    console.log(`\n\x1b[31m================================\x1b[0m\nHa perdido su apuesta de \x1b[33m${this.getApuestaColor()}\x1b[0m al Color \x1b[33m${this.getColor()[this.getColorElegido()]}\x1b[0m, su saldo esta en \x1b[33m${this.getCreditoActual()}\x1b[0m\n\x1b[31m================================\x1b[0m\n`);
                 }
             }
             //color
             if (!(this.getApuestaEsPar() === 0)) {
                 if ((((this.getElegirEsPar()) === 0) && ((this.getEsPar()) === true)) || (((this.getElegirEsPar()) === 1) && ((this.getEsPar()) === false))) {
                     this.setCreditoActual(((this.getApuestaEsPar()) * 2) + this.getCreditoActual());
-                    console.log(`ah ganado 2 veces mas de su apuesta de ${this.getApuestaEsPar()} por sacar pleno en paridad mixta, ahora su saldo es de ${this.getCreditoActual()}`);
+                    console.log(`\n\x1b[32m================================\x1b[0m\nHa ganado *\x1b[33m1\x1b[0m*  vez mas que se apuesta de \x1b[33m${this.getApuestaEsPar()}\x1b[0m por sacar pleno en paridad mixta, ahora su saldo es de \x1b[33m${this.getCreditoActual()}\x1b[0m\n\x1b[32m================================\x1b[0m\n`);
                 }
                 //Sino restamos la apuesta al credito
                 else {
-                    console.log(`ah perdido su apuesta de ${this.getApuestaEsPar()} al numero ${this.getNumeroElegido()}, su saldo esta en ${this.getCreditoActual()}`);
+                    console.log(`\n\x1b[31m================================\x1b[0m\nHa perdido su apuesta de *\x1b[33m${this.getApuestaEsPar()}\x1b[0m al numero *\x1b[33m${this.getNumeroElegido()}\x1b[0m, su saldo esta en *\x1b[33m${this.getCreditoActual()}\x1b[0m\n\x1b[31m================================\x1b[0m\n`);
                 }
             }
             this.setApuestaNumero(0);
@@ -287,9 +287,9 @@ Número \x1b[1;33m${this.funcionNumeroRuleta()[9]}\x1b[0m||\x1b[1;36m${this.func
             this.funcionPosiblesApuestas();
             //PRESENTAMOS EL JUEGO
             console.log("\n================================");
-            console.log(`\x1b[32mBienvenido al juego de la ${super.getNombre()}\x1b[0m`);
+            console.log(`\x1b[32mBienvenido al juego de la ${this.getNombre()}\x1b[0m`);
             console.log("================================");
-            console.log(`\x1b[31m *Le recomendamos ser conciente de su apuesta*\x1b[0m \n\n`);
+            console.log(`\x1b[31m *Le recomendamos ser consciente de su apuesta*\x1b[0m \n\n`);
             console.log(`\x1b[34m -Recuerde: \x1b[0m \n`);
             console.log(`\x1b[34m 1) Podrá elegir un numero del\x1b[0m (0) al (11) \x1b[34m - Si saca pleno... ¡¡¡Se lleva **8** veces más de lo que aposto.!!!\x1b[0m`);
             console.log("================================");
@@ -304,52 +304,51 @@ Número \x1b[1;33m${this.funcionNumeroRuleta()[9]}\x1b[0m||\x1b[1;36m${this.func
             this.setApuestaColor(0);
             this.setApuestaEsPar(0);
             //-----------------------------------------------------------------------------------------------
-            console.log(`Comencemos...en primer lugar...`);
+            console.log(`Comencemos...\x1b[0men primer lugar...\x1b[35m`);
             console.log("================================\x1b[0m");
             this.funcionRuletaCompleta();
             this.funcionElegirNumero();
             if (this.getCreditoActual() >= 1000) {
-                console.log(`Por favor ahora ingrese la cantidad que desea apostar a numero.`);
                 //-------------------------------------------------------
+                console.log(`\n\x1b[31m**\x1b[0mPor favor ahora ingrese la cantidad que desea apostar a numero\x1b[31m**\x1b[0m`);
                 this.calcularGananciaNumero(this.funcionApostar());
-                console.log(`${this.getCreditoActual()}`);
             }
             else {
-                console.log(`Espere la proxima ronda para seguir apostando, su saldo no es suficiente`);
+                console.log(`\x1b[31m**Espere la proxima ronda para seguir apostando, su saldo no es suficiente**\x1b[0m`);
             }
             //VOLVEMOS A IMPRIMIR EL RANGO DE APUESTAS PARA ACTUALIZAR ALL-IN
             this.funcionPosiblesApuestas();
-            console.log(`Muy bien sigamos...\n`);
+            console.log("\x1b[35m================================");
+            console.log(`Muy bien\x1b[0m sigamos...`);
+            console.log("\x1b[35m================================\x1b[0m");
             this.funcionRuletaCompleta();
             this.funcionElegirColor();
             if (this.getCreditoActual() >= 1000) {
-                console.log(`Por favor ahora ingrese la cantidad que desea apostar a color.`);
+                console.log(`\x1b[31m**\x1b[0mPor favor ahora ingrese la cantidad que desea apostar a color\x1b[31m**\x1b[0m`);
                 //-------------------------------------------------------
                 this.calcularGananciaColor(this.funcionApostar());
-                console.log(`${this.getCreditoActual()}`);
             }
             else {
-                console.log(`Espere la proxima ronda para seguir apostando, su saldo no es suficiente`);
+                console.log(`\x1b[31m**Espere la proxima ronda para seguir apostando, su saldo no es suficiente**\x1b[0m`);
             }
             //VOLVEMOS A IMPRIMIR EL RANGO DE APUESTAS PARA ACTUALIZAR ALL-IN
             this.funcionPosiblesApuestas();
+            console.log("\x1b[35m================================\x1b[0m");
             console.log(`Ahora si para terminar...`);
+            console.log("\x1b[35m================================\x1b[0m");
             this.funcionRuletaCompleta();
             this.funcionElegirEsPar();
             if (this.getCreditoActual() >= 1000) {
-                console.log(`Por favor ahora ingrese la cantidad que desea apostar a par o impar.`);
+                console.log(`\x1b[31m**\x1b[0mPor favor ahora ingrese la cantidad que desea apostar a par o impar\x1b[31m**\x1b[0m`);
                 //-------------------------------------------------------
                 this.calcularGananciaEsPar(this.funcionApostar());
-                console.log(`${this.getCreditoActual()}`);
             }
             else {
-                console.log(`Espere la proxima ronda para seguir apostando, su saldo no es suficiente`);
+                console.log(`\x1b[31m**Espere la proxima ronda para seguir apostando, su saldo no es suficiente**\x1b[0m`);
             }
-            console.log(`Muy bien, sacando numero ganador.\n\n 1...\n\n 2...\n\n 3...\n\n El numero ganador es ${this.funcionNumeroGanador()}`);
-            console.log(`Ah salido el color ${this.funcionColorGanador()} y el numero es ${this.funcionRuletaParoImpar(this.getNumeroGanador())}`);
+            console.log(`\x1b[35m==================================\x1b[0m\nMuy bien, sacando numero ganador.\n\x1b[35m==================================\x1b[0m\n\n 1... 2... 3...\n\n\x1b[33m================================\x1b[0m\n El numero ganador es **\x1b[33m${this.funcionNumeroGanador()}\x1b[0m**\n\x1b[32m================================\x1b[0m`);
+            console.log(`Ah salido el color **\x1b[33m${this.funcionColorGanador()}\x1b[0m** \n\x1b[33m================================\x1b[0m\ny... el numero es **\x1b[33m${this.funcionRuletaParoImpar(this.getNumeroGanador())}\x1b[0m**\n\x1b[32m================================\x1b[0m`);
             this.calcularGanancia();
-            console.log(this.apuestaColor);
-            console.log(this.getCreditoActual());
             return this.getCreditoActual();
         };
         this.numeros = pNumeros; //array de numeros posibles
